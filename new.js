@@ -1,10 +1,6 @@
-function fun(a, b){
-    a=1;
-    b=2;
-    c = Math.floor(Math.random() * 100);
-if (c%2==0)
-return a;
-else 
-return b;
+function fun(min, max){
+    c = Math.floor(Math.random() * (max - min)) + min;
 }
-fun(1,2);
+getElementByID('')=a;
+getElementByID('')=b;
+fun(a,b)
