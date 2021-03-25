@@ -31,8 +31,10 @@
 
 
 .index2-sub-space2{
+    padding-top: 20px;
     display: flex;
     justify-content: center;
+    
 }
 
 .index2-sub-space2-1{
@@ -42,6 +44,7 @@
 
 
 .index2-sub-space3{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
@@ -112,7 +115,7 @@
 
 .index2-sub-space6{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .index2-sub-space6-1{
     display: flex;
