@@ -3,7 +3,7 @@
     position: relative;
     width: 75px;
     height: 75px;
-    float:right;
+    justify-content: center;
     color:wheat;
   }
   
