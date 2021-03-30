@@ -40,6 +40,7 @@
 .index2-sub-space2-1{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -125,4 +126,10 @@
 
 #question-img{
     margin: 6%;
+}
+
+#forq2{
+    text-align: center;
+    color: white;
+    
 }

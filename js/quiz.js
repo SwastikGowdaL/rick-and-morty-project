@@ -283,42 +283,7 @@ setTimeout(() => {
   console.log(question[0]);
 
   const i = 0;
-  askq1(i);
-  // switch (b[i]) {
-  //   case 1:
-  //     askq1(i);
-  //     console.log('yep got it ');
-  //     break;
-  //   case 2:
-  //     askq2(i);
-  //     break;
-  //   case 3:
-  //     askq3(i);
-  //     break;
-  //   case 4:
-  //     askq4(i);
-  //     break;
-  //   case 5:
-  //     askq5(i);
-  //     break;
-  //   case 6:
-  //     askq6(i);
-  //     break;
-  //   case 7:
-  //     askq7(i);
-  //     break;
-  //   case 8:
-  //     askq8(i);
-  //     break;
-  //   case 9:
-  //     askq9(i);
-  //     break;
-  //   case 10:
-  //     askq10(i);
-  //     break;
-  //   default:
-  //     break;
-  // }
+ selectqus(i);
 }, 8000);
 
 function selectqus(i) {
@@ -355,6 +320,7 @@ function selectqus(i) {
       askq10(i);
       break;
     default:
+      console.log("finally done");  
       break;
   }
 }
@@ -370,6 +336,7 @@ function askq1(i) {
   document.getElementById('ans-btn3').innerText = 'genderless';
   document.getElementById('ans-btn4').innerText = 'unknown';
   const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
   hint.addEventListener('click', function (event) {
     hint.innerHTML = `NAME : ${question[i].name} and SPECIES : ${question[i].species}`;
   });
@@ -652,6 +619,10 @@ function askq2(i) {
   });
   setTimeout(() => {
     i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
     selectqus(i);
   }, 15000);
 }
@@ -662,20 +633,21 @@ function askq3(i) {
   const qusrm = document.getElementById('question-img');
   qusrm.style.visibility = 'hidden';
   const forq2 = document.getElementById('forq2');
+  forq2.style.visibility="visible";
   forq2.innerText = `${question[i].name}`;
   const optnum = [0, 1, 2, 3];
   const boptions = shuffle(optnum);
-  q2.push(question[i].image);
+  q3.push(question[i].image);
   // let foptions=[];
   // foptions.push(q2[boptions[0]]);
   // foptions.push(q2[boptions[1]]);
   // foptions.push(q2[boptions[2]]);
   // foptions.push(q2[boptions[3]]);
 
-  document.getElementById('ans-btn1').innerText = q2[boptions[0]];
-  document.getElementById('ans-btn2').innerText = q2[boptions[1]];
-  document.getElementById('ans-btn3').innerText = q2[boptions[2]];
-  document.getElementById('ans-btn4').innerText = q2[boptions[3]];
+  document.getElementById('ans-btn1').innerText = q3[boptions[0]];
+  document.getElementById('ans-btn2').innerText = q3[boptions[1]];
+  document.getElementById('ans-btn3').innerText = q3[boptions[2]];
+  document.getElementById('ans-btn4').innerText = q3[boptions[3]];
 
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
@@ -689,26 +661,26 @@ function askq3(i) {
   const ans4 = document.getElementById('ans-btn4');
 
   ans1.addEventListener('click', function (event) {
-    if (question[i].image === q2[boptions[0]]) {
+    if (question[i].image === q3[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].image === q2[boptions[1]]) {
+    } else if (question[i].image === q3[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[2]]) {
+    } else if (question[i].image === q3[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[3]]) {
+    } else if (question[i].image === q3[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -718,26 +690,26 @@ function askq3(i) {
   });
 
   ans2.addEventListener('click', function (event) {
-    if (question[i].image === q2[boptions[0]]) {
+    if (question[i].image === q3[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].image === q2[boptions[1]]) {
+    } else if (question[i].image === q3[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[2]]) {
+    } else if (question[i].image === q3[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[3]]) {
+    } else if (question[i].image === q3[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -747,26 +719,26 @@ function askq3(i) {
   });
 
   ans3.addEventListener('click', function (event) {
-    if (question[i].image === q2[boptions[0]]) {
+    if (question[i].image === q3[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].image === q2[boptions[1]]) {
+    } else if (question[i].image === q3[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[2]]) {
+    } else if (question[i].image === q3[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[3]]) {
+    } else if (question[i].image === q3[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -776,26 +748,26 @@ function askq3(i) {
   });
 
   ans4.addEventListener('click', function (event) {
-    if (question[i].image === q2[boptions[0]]) {
+    if (question[i].image === q3[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].image === q2[boptions[1]]) {
+    } else if (question[i].image === q3[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[2]]) {
+    } else if (question[i].image === q3[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].image === q2[boptions[3]]) {
+    } else if (question[i].image === q3[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -805,7 +777,12 @@ function askq3(i) {
   });
   setTimeout(() => {
     i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
     qusrm.style.visibility = 'visible';
+    forq2.style.visibility="hidden";
     selectqus(i);
   }, 15000);
 }
@@ -964,7 +941,792 @@ function askq5(i) {
     .setAttribute('src', question[i].image);
   const optnum = [0, 1, 2, 3];
   const boptions = shuffle(optnum);
-  q2.push(question[i].name);
+  q5.push(question[i].type);
+  // let foptions=[];
+  // foptions.push(q2[boptions[0]]);
+  // foptions.push(q2[boptions[1]]);
+  // foptions.push(q2[boptions[2]]);
+  // foptions.push(q2[boptions[3]]);
+
+  document.getElementById('ans-btn1').innerText = q5[boptions[0]];
+  document.getElementById('ans-btn2').innerText = q5[boptions[1]];
+  document.getElementById('ans-btn3').innerText = q5[boptions[2]];
+  document.getElementById('ans-btn4').innerText = q5[boptions[3]];
+
+  const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
+  hint.addEventListener('click', function (event) {
+    hint.innerHTML = `GENDER : ${question[i].gender} and SPECIES : ${question[i].species}`;
+  });
+
+  const ans1 = document.getElementById('ans-btn1');
+  const ans2 = document.getElementById('ans-btn2');
+  const ans3 = document.getElementById('ans-btn3');
+  const ans4 = document.getElementById('ans-btn4');
+
+  ans1.addEventListener('click', function (event) {
+    if (question[i].type === q5[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].type === q5[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans2.addEventListener('click', function (event) {
+    if (question[i].type === q5[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].type === q5[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans3.addEventListener('click', function (event) {
+    if (question[i].type === q5[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].type === q5[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans4.addEventListener('click', function (event) {
+    if (question[i].type === q5[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].type === q5[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].type === q5[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+  setTimeout(() => {
+    i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
+    selectqus(i);
+  }, 15000);
+}
+
+
+
+function askq6(i) {
+  const ch = document.getElementById('question');
+  ch.textContent = 'What is the origin of the below character?';
+  document
+    .getElementById('question-img')
+    .setAttribute('src', question[i].image);
+  const optnum = [0, 1, 2, 3];
+  const boptions = shuffle(optnum);
+  q6.push(question[i].origin.name);
+  // let foptions=[];
+  // foptions.push(q2[boptions[0]]);
+  // foptions.push(q2[boptions[1]]);
+  // foptions.push(q2[boptions[2]]);
+  // foptions.push(q2[boptions[3]]);
+
+  document.getElementById('ans-btn1').innerText = q6[boptions[0]];
+  document.getElementById('ans-btn2').innerText = q6[boptions[1]];
+  document.getElementById('ans-btn3').innerText = q6[boptions[2]];
+  document.getElementById('ans-btn4').innerText = q6[boptions[3]];
+
+  const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
+  hint.addEventListener('click', function (event) {
+    hint.innerHTML = `NAME : ${question[i].name} and SPECIES : ${question[i].species}`;
+  });
+
+  const ans1 = document.getElementById('ans-btn1');
+  const ans2 = document.getElementById('ans-btn2');
+  const ans3 = document.getElementById('ans-btn3');
+  const ans4 = document.getElementById('ans-btn4');
+
+  ans1.addEventListener('click', function (event) {
+    if (question[i].origin.name === q6[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].origin.name === q6[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans2.addEventListener('click', function (event) {
+    if (question[i].origin.name === q6[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].origin.name === q6[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans3.addEventListener('click', function (event) {
+    if (question[i].origin.name === q6[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].origin.name === q6[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans4.addEventListener('click', function (event) {
+    if (question[i].origin.name === q6[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].origin.name === q6[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].origin.name === q6[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+  setTimeout(() => {
+    i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
+    selectqus(i);
+  }, 15000);
+}
+
+
+function askq7(i) {
+  const ch = document.getElementById('question');
+  ch.textContent = 'In which episode was the below character first seen in ?';
+  document
+    .getElementById('question-img')
+    .setAttribute('src', question[i].image);
+  let spliting= question[i].episode[0].split("episode/");
+  document.getElementById('ans-btn1').innerText = spliting[1];
+  document.getElementById('ans-btn2').innerText = fun(1,41);
+  document.getElementById('ans-btn3').innerText =  fun(1,41);
+  document.getElementById('ans-btn4').innerText =  fun(1,41);
+  const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
+  hint.addEventListener('click', function (event) {
+    hint.innerHTML = `NAME : ${question[i].name} and SPECIES : ${question[i].species}`;
+  });
+  const ans1 = document.getElementById('ans-btn1');
+  const ans2 = document.getElementById('ans-btn2');
+  const ans3 = document.getElementById('ans-btn3');
+  const ans4 = document.getElementById('ans-btn4');
+
+  ans1.addEventListener('click', function (event) {
+    // if (question[i].episode[0] === spliting[1]) {
+    //   console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    // } else if (question[i].gender === 'Female') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Genderless') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'unknown') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    // }
+  });
+
+  ans2.addEventListener('click', function (event) {
+    // if (question[i].gender === 'Male') {
+    //   console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Female') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    //   ccount += 1;
+    // } else if (question[i].gender === 'Genderless') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'unknown') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    // }
+  });
+
+  ans3.addEventListener('click', function (event) {
+    // if (question[i].gender === 'Male') {
+    //   console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Female') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Genderless') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    //   ccount += 1;
+    // } else if (question[i].gender === 'unknown') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    // }
+  });
+
+  ans4.addEventListener('click', function (event) {
+    // if (question[i].gender === 'Male') {
+    //   console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Female') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'Genderless') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    // } else if (question[i].gender === 'unknown') {
+    //   console.log(question[i]);
+    //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+    //   document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    //   ccount += 1;
+    // }
+  });
+  setTimeout(() => {
+    i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
+
+    selectqus(i);
+  }, 15000);
+}
+
+function askq8(i) {
+  const ch = document.getElementById('question');
+  ch.textContent = 'In which location was the below character last seen?';
+  document
+    .getElementById('question-img')
+    .setAttribute('src', question[i].image);
+  const optnum = [0, 1, 2, 3];
+  const boptions = shuffle(optnum);
+  q8.push(question[i].location.name);
+  // let foptions=[];
+  // foptions.push(q2[boptions[0]]);
+  // foptions.push(q2[boptions[1]]);
+  // foptions.push(q2[boptions[2]]);
+  // foptions.push(q2[boptions[3]]);
+
+  document.getElementById('ans-btn1').innerText = q8[boptions[0]];
+  document.getElementById('ans-btn2').innerText = q8[boptions[1]];
+  document.getElementById('ans-btn3').innerText = q8[boptions[2]];
+  document.getElementById('ans-btn4').innerText = q8[boptions[3]];
+
+  const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
+  hint.addEventListener('click', function (event) {
+    hint.innerHTML = `NAME : ${question[i].name} and SPECIES : ${question[i].species}`;
+  });
+
+  const ans1 = document.getElementById('ans-btn1');
+  const ans2 = document.getElementById('ans-btn2');
+  const ans3 = document.getElementById('ans-btn3');
+  const ans4 = document.getElementById('ans-btn4');
+
+  ans1.addEventListener('click', function (event) {
+    if (question[i].location.name === q8[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].location.name === q8[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans2.addEventListener('click', function (event) {
+    if (question[i].location.name === q8[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].location.name === q8[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans3.addEventListener('click', function (event) {
+    if (question[i].location.name === q8[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].location.name === q8[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans4.addEventListener('click', function (event) {
+    if (question[i].location.name === q8[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].location.name === q8[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].location.name === q8[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+  setTimeout(() => {
+    i += 1;
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
+    selectqus(i);
+  }, 15000);
+}
+
+
+
+function askq9(i) {
+  const ch = document.getElementById('question');
+  ch.textContent = 'What is the title of the following episode ?';
+  let forq9=document
+    .getElementById('question-img');
+  forq9.style.visibility="hidden";
+  let forq2=document.getElementById("forq2");
+  forq2.style.visibility="visible";
+  forq2.innerText=question[i].episode;
+  const optnum = [0, 1, 2, 3];
+  const boptions = shuffle(optnum);
+  q9.push(question[i].name);
+  // let foptions=[];
+  // foptions.push(q2[boptions[0]]);
+  // foptions.push(q2[boptions[1]]);
+  // foptions.push(q2[boptions[2]]);
+  // foptions.push(q2[boptions[3]]);
+
+  document.getElementById('ans-btn1').innerText = q9[boptions[0]];
+  document.getElementById('ans-btn2').innerText = q9[boptions[1]];
+  document.getElementById('ans-btn3').innerText = q9[boptions[2]];
+  document.getElementById('ans-btn4').innerText = q9[boptions[3]];
+
+  const hint = document.getElementById('hints');
+  hint.innerHTML = 'Click here for hints';
+  hint.addEventListener('click', function (event) {
+    hint.innerHTML = `AIR DATE : ${question[i].air_date} `;
+  });
+
+  const ans1 = document.getElementById('ans-btn1');
+  const ans2 = document.getElementById('ans-btn2');
+  const ans3 = document.getElementById('ans-btn3');
+  const ans4 = document.getElementById('ans-btn4');
+
+  ans1.addEventListener('click', function (event) {
+    if (question[i].name === q9[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].name === q9[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans2.addEventListener('click', function (event) {
+    if (question[i].name === q9[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].name === q9[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans3.addEventListener('click', function (event) {
+    if (question[i].name === q9[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].name === q9[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+
+  ans4.addEventListener('click', function (event) {
+    if (question[i].name === q9[boptions[0]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+      ccount += 1;
+    } else if (question[i].name === q9[boptions[1]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[2]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
+      document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
+    } else if (question[i].name === q9[boptions[3]]) {
+      console.log(question[i]);
+      document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
+      document.getElementById('ans-btn4').style.backgroundColor = '#84ff84';
+    }
+  });
+  setTimeout(() => {
+    i += 1;
+    forq9.style.visibility="visible";
+    forq2.style.visibility="hidden";
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
+    selectqus(i);
+  }, 15000);
+}
+
+
+function askq10(i) {
+  const ch = document.getElementById('question');
+  ch.textContent = 'What is the type of the below location?';
+  let forq10=document
+    .getElementById('question-img');
+  forq10.style.visibility="hidden";
+  let forq2=document.getElementById("forq2");
+  forq2.style.visibility="visible";
+  forq2.innerText=question[i].name;
+  const optnum = [0, 1, 2, 3];
+  const boptions = shuffle(optnum);
+  ql.push(question[i].type);
   // let foptions=[];
   // foptions.push(q2[boptions[0]]);
   // foptions.push(q2[boptions[1]]);
@@ -979,7 +1741,7 @@ function askq5(i) {
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
   hint.addEventListener('click', function (event) {
-    hint.innerHTML = `GENDER : ${question[i].gender} and SPECIES : ${question[i].species}`;
+    hint.innerHTML = `DIMENSION : ${question[i].dimension}`;
   });
 
   const ans1 = document.getElementById('ans-btn1');
@@ -988,26 +1750,26 @@ function askq5(i) {
   const ans4 = document.getElementById('ans-btn4');
 
   ans1.addEventListener('click', function (event) {
-    if (question[i].type === q2[boptions[0]]) {
+    if (question[i].type === ql[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].type === q2[boptions[1]]) {
+    } else if (question[i].type === ql[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[2]]) {
+    } else if (question[i].type === ql[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[3]]) {
+    } else if (question[i].type === ql[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -1017,26 +1779,26 @@ function askq5(i) {
   });
 
   ans2.addEventListener('click', function (event) {
-    if (question[i].type === q2[boptions[0]]) {
+    if (question[i].type === ql[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].type === q2[boptions[1]]) {
+    } else if (question[i].type === ql[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[2]]) {
+    } else if (question[i].type === ql[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[3]]) {
+    } else if (question[i].type === ql[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -1046,26 +1808,26 @@ function askq5(i) {
   });
 
   ans3.addEventListener('click', function (event) {
-    if (question[i].type === q2[boptions[0]]) {
+    if (question[i].type === ql[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].type === q2[boptions[1]]) {
+    } else if (question[i].type === ql[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[2]]) {
+    } else if (question[i].type === ql[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[3]]) {
+    } else if (question[i].type === ql[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -1075,26 +1837,26 @@ function askq5(i) {
   });
 
   ans4.addEventListener('click', function (event) {
-    if (question[i].type === q2[boptions[0]]) {
+    if (question[i].type === ql[boptions[0]]) {
       console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
-    } else if (question[i].type === q2[boptions[1]]) {
+    } else if (question[i].type === ql[boptions[1]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[2]]) {
+    } else if (question[i].type === ql[boptions[2]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
-    } else if (question[i].type === q2[boptions[3]]) {
+    } else if (question[i].type === ql[boptions[3]]) {
       console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
@@ -1104,6 +1866,12 @@ function askq5(i) {
   });
   setTimeout(() => {
     i += 1;
+    forq10.style.visibility="visible";
+    forq2.style.visibility="hidden";
+    document.getElementById('ans-btn2').style.backgroundColor = 'white';
+    document.getElementById('ans-btn1').style.backgroundColor = 'white';
+    document.getElementById('ans-btn3').style.backgroundColor = 'white';
+    document.getElementById('ans-btn4').style.backgroundColor = 'white';
     selectqus(i);
   }, 15000);
 }

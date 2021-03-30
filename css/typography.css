@@ -45,6 +45,10 @@ input[type="text"]
     font-family: 'quiz', sans-serif;
 }
 
+#forq2{
+    font-family: 'quiz-question', sans-serif;
+}
+
 @media only screen and (min-device-width : 767px) and (max-device-width : 1025px) {
 
     .main-space-ele2{
