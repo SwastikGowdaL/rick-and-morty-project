@@ -851,7 +851,7 @@ img4.remove();
 
 sessionStorage.setItem('score', corans);
 
-window.location = "indexlast.php";
+window.location.href = "indexlast.php";
 
 }, 5000);
 
