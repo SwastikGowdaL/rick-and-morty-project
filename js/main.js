@@ -118,5 +118,4 @@ name2.addEventListener('keyup', function (event) {
   }
 });
 
-const timerdata = document.getElementById('root').value;
-console.log(timerdata);
+
