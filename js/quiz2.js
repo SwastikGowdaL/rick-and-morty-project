@@ -2197,15 +2197,20 @@ if(w10===0){
 }
 
 function correct_sound(){
-  const source =
-  '..assets/audio/cs.mp3';
-const audio = new Audio();
-// no event listener needed here
-audio.src = source;
-audio.autoplay = true;
-audio.play();
-}
+ 
+this.sound = new Audio();
+this.sound.src = '..assets/audio/theme-song.mp3';
+this.sound.load();
+this.sound.autoplay = true;
+this.sound.play()
+  .then(() => {
+    // Audio is playing.
+  })
+  .catch(error => {
+    console.log(error);
+  });
 
+}
 function wrong_sound(){
   const source =
   '..assets/audio/ws.mp3';
