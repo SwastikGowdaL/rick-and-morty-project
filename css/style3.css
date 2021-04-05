@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000000;
+    padding: 1px;
+    /* width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 3px solid white; */
+ }
+
+ .main-space{
+    margin: 12px;
+    padding: 10px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    background-color: #191919;
+    flex-direction: column;
+}
+
+.sub-space-ele0{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub-space-ele0-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+}
+
+.sub-space-ele1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub-space-ele1-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+}
+
+.share-btn{
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    transition: all 0.2s ease-in-out;
+    padding: 3px;
+    font-size: 13px;
+}
+
+.share-btn:hover{
+    background-color: black;
+    color: white;
+  cursor: pointer;
+}
+
+.sub-space-ele2{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+
+.sub-space-ele3{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.leaderboard{
+    color: white;
+}
+
+.icon{
+    
+}
+
+.sub-space-ele4{
+    /* display: flex;
+    flex-direction: row;
+    justify-content:center; */
+    overflow-x:auto;
+}
+
+.table-style{
+    color: rgb(0, 0, 0);
+    background-color: grey;
+}
+
+table{
+ 
+}
+
+th{
+  
+   text-align: center;
+   padding: 10px 20px;
+   border: 1px solid#191919;
+}
+td{
+    padding: 10px 45px;
+    text-align: center;
+    border: 1px solid#191919;
+ }
+thead{
+     border: 2px solid #191919;
+ }
+tbody{
+    border: 2px solid #191919;
+ }
+
+ .sub-space-ele5{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+.sub-space-ele5-1{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+ .tryagain-btn{
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    transition: all 0.2s ease-in-out;
+    padding: 8px 13px;
+    font-size: 17px;
+}
+
+.tryagain-btn:hover{
+    background-color: black;
+    color: white;
+  cursor: pointer;
+}
+
+.sub-space-ele6{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+.sub-space-ele6 a{
+    color:greenyellow;
+    text-decoration: none;
+    text-align: center;
+}
+.sub-space-ele6 a:hover{
+    transition: all 0.2s ease-in-out;
+    color: rgb(48, 48, 214);;
+}

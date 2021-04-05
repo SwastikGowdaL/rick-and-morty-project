@@ -21,6 +21,9 @@
 .index2-sub-space1-1{
     display: flex;
     justify-content: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
 }
 
 .question-style{
@@ -105,7 +108,7 @@
     background-color: white;
     color: black;
     border: 3px solid black;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .ans-op:hover{
@@ -117,10 +120,12 @@
 .index2-sub-space6{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .index2-sub-space6-1{
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
+    flex-direction: column;
     color: white;
 }
 
@@ -132,4 +137,21 @@
     text-align: center;
     color: white;
     
+}
+
+#time-left{
+    text-align: center;
+    color: rgb(112, 112, 112);
+}
+
+#clock{
+    display: flex;
+    justify-content: center;
+}
+
+.index2-sub-space4 img{
+    width: 200px;
+}
+.index2-sub-space5 img{
+    width: 200px;
 }

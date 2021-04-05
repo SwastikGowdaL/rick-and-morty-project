@@ -1,5 +1,5 @@
 const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const b = [];
+const b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let ccount = 0;
 function fun(min, max) {
   const c = Math.floor(Math.random() * (max - min)) + min;
@@ -24,17 +24,19 @@ function shuffle(arr) {
   return arr;
 }
 
-for (let i = 1; i <= 10; i++) {
-  if (a.length == 1) {
-    b.push(a[0]);
-    a.pop();
-    break;
-  }
-  const d = fun(1, a.length);
-  console.log(d);
-  b.push(a[d]);
-  a.splice(d, 1);
-}
+// for (let i = 1; i <= 10; i++) {
+//   if (a.length == 1) {
+//     b.push(a[0]);
+//     a.pop();
+//     break;
+//   }
+//   const d = fun(1, a.length);
+//   // console.log(d);
+//   b.push(a[d]);
+//   a.splice(d, 1);
+// }
+
+
 
 // options for question 2
 const q2 = [];
@@ -159,6 +161,8 @@ async function fq8() {
     a = `character/${randaf}`;
     const fq83 = await axios.get(`https://rickandmortyapi.com/api/${a}`);
     q8.push(fq83.data.location.name);
+    console.log("q8");
+    console.log(q8);  
   } catch (error) {
     console.error(error);
   }
@@ -206,14 +210,14 @@ async function fql() {
   }
 }
 
-console.log(b);
+// console.log(b);
 const question2 = [];
 const question = [];
 async function getUser(a, i) {
   try {
     const response = await axios.get(`https://rickandmortyapi.com/api/${a}`);
     question.push(response.data);
-    console.log(question);
+    // console.log(question);
     question2.push(question[i]);
   } catch (error) {
     console.error(error);
@@ -268,7 +272,7 @@ for (let i = 0; i < 10; i++) {
       ran = fun(1, 108);
       getUser(`location/${ran}`, i);
       fql();
-      console.log(question);
+      // console.log(question);
       break;
     default:
       console.log('not working');
@@ -280,17 +284,17 @@ for (let i = 0; i < 10; i++) {
 // }, 8000);
 
 setTimeout(() => {
-  console.log(question[0]);
+  console.log(question);
 
-  const i = 0;
+  let i = 0;
  selectqus(i);
-}, 8000);
+}, 10000);
 
 function selectqus(i) {
   switch (b[i]) {
     case 1:
       askq1(i);
-      console.log('yep got it ');
+      // console.log('yep got it ');
       break;
     case 2:
       askq2(i);
@@ -344,29 +348,32 @@ function askq1(i) {
   const ans2 = document.getElementById('ans-btn2');
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
-
+  
+  console.log("1");
+  console.log(question[i]);
+   
   ans1.addEventListener('click', function (event) {
     if (question[i].gender === 'Male') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].gender === 'Female') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Genderless') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -376,26 +383,26 @@ function askq1(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].gender === 'Male') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Female') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].gender === 'Genderless') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -405,26 +412,26 @@ function askq1(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].gender === 'Male') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Female') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Genderless') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].gender === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -434,25 +441,25 @@ function askq1(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].gender === 'Male') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Female') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'Genderless') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].gender === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -491,6 +498,10 @@ function askq2(i) {
   document.getElementById('ans-btn3').innerText = q2[boptions[2]];
   document.getElementById('ans-btn4').innerText = q2[boptions[3]];
 
+  console.log("2");
+  console.log(question[i]);
+  console.log(q2); 
+
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
   hint.addEventListener('click', function (event) {
@@ -504,26 +515,26 @@ function askq2(i) {
 
   ans1.addEventListener('click', function (event) {
     if (question[i].name === q2[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q2[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -533,26 +544,26 @@ function askq2(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].name === q2[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q2[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -562,26 +573,26 @@ function askq2(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].name === q2[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q2[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -591,26 +602,26 @@ function askq2(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].name === q2[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q2[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q2[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -649,6 +660,10 @@ function askq3(i) {
   document.getElementById('ans-btn3').innerText = q3[boptions[2]];
   document.getElementById('ans-btn4').innerText = q3[boptions[3]];
 
+  console.log("3");
+  console.log(question[i]);
+  console.log(q3); 
+
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
   hint.addEventListener('click', function (event) {
@@ -662,26 +677,26 @@ function askq3(i) {
 
   ans1.addEventListener('click', function (event) {
     if (question[i].image === q3[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].image === q3[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -691,26 +706,26 @@ function askq3(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].image === q3[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].image === q3[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -720,26 +735,26 @@ function askq3(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].image === q3[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].image === q3[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -749,26 +764,26 @@ function askq3(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].image === q3[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].image === q3[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].image === q3[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -807,28 +822,31 @@ function askq4(i) {
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
 
+  console.log("4");
+  console.log(question[i]);
+
   ans1.addEventListener('click', function (event) {
     if (question[i].status === 'Alive') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].status === 'Dead') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === "I don't know") {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -838,26 +856,26 @@ function askq4(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].status === 'Alive') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'Dead') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].status === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === "I don't know") {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -867,26 +885,26 @@ function askq4(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].status === 'Alive') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'Dead') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].status === "I don't know") {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -896,25 +914,25 @@ function askq4(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].status === 'Alive') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'Dead') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === 'unknown') {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].status === "I don't know") {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -953,6 +971,10 @@ function askq5(i) {
   document.getElementById('ans-btn3').innerText = q5[boptions[2]];
   document.getElementById('ans-btn4').innerText = q5[boptions[3]];
 
+  console.log("5");
+  console.log(question[i]);
+  console.log(q5); 
+
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
   hint.addEventListener('click', function (event) {
@@ -966,26 +988,26 @@ function askq5(i) {
 
   ans1.addEventListener('click', function (event) {
     if (question[i].type === q5[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === q5[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -995,26 +1017,26 @@ function askq5(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].type === q5[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === q5[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1024,26 +1046,26 @@ function askq5(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].type === q5[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === q5[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1053,26 +1075,26 @@ function askq5(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].type === q5[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === q5[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === q5[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1106,6 +1128,11 @@ function askq6(i) {
   // foptions.push(q2[boptions[2]]);
   // foptions.push(q2[boptions[3]]);
 
+  console.log("6");
+  console.log(question[i].origin.name);
+  console.log(q6); 
+
+
   document.getElementById('ans-btn1').innerText = q6[boptions[0]];
   document.getElementById('ans-btn2').innerText = q6[boptions[1]];
   document.getElementById('ans-btn3').innerText = q6[boptions[2]];
@@ -1122,28 +1149,29 @@ function askq6(i) {
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
 
+
   ans1.addEventListener('click', function (event) {
     if (question[i].origin.name === q6[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].origin.name === q6[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1153,26 +1181,26 @@ function askq6(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].origin.name === q6[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].origin.name === q6[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1182,26 +1210,26 @@ function askq6(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].origin.name === q6[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].origin.name === q6[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1211,26 +1239,26 @@ function askq6(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].origin.name === q6[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].origin.name === q6[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].origin.name === q6[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1269,28 +1297,31 @@ function askq7(i) {
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
 
+  console.log("7");
+  console.log(question[i]);
+
   ans1.addEventListener('click', function (event) {
     // if (question[i].episode[0] === spliting[1]) {
-    //   console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     // } else if (question[i].gender === 'Female') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Genderless') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'unknown') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1300,26 +1331,26 @@ function askq7(i) {
 
   ans2.addEventListener('click', function (event) {
     // if (question[i].gender === 'Male') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Female') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     //   ccount += 1;
     // } else if (question[i].gender === 'Genderless') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'unknown') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1329,26 +1360,26 @@ function askq7(i) {
 
   ans3.addEventListener('click', function (event) {
     // if (question[i].gender === 'Male') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Female') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Genderless') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     //   ccount += 1;
     // } else if (question[i].gender === 'unknown') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1358,25 +1389,25 @@ function askq7(i) {
 
   ans4.addEventListener('click', function (event) {
     // if (question[i].gender === 'Male') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Female') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'Genderless') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
     //   document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     // } else if (question[i].gender === 'unknown') {
-    //   console.log(question[i]);
+      // console.log(question[i]);
     //   document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
     //   document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1403,6 +1434,11 @@ function askq8(i) {
     .setAttribute('src', question[i].image);
   const optnum = [0, 1, 2, 3];
   const boptions = shuffle(optnum);
+
+  console.log("8");
+  console.log(question[i]);
+  console.log(q8); 
+
   q8.push(question[i].location.name);
   // let foptions=[];
   // foptions.push(q2[boptions[0]]);
@@ -1426,28 +1462,32 @@ function askq8(i) {
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
 
+  console.log("8");
+  console.log(question[i]);
+  console.log(q8); 
+
   ans1.addEventListener('click', function (event) {
     if (question[i].location.name === q8[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].location.name === q8[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1457,26 +1497,26 @@ function askq8(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].location.name === q8[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].location.name === q8[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1486,26 +1526,26 @@ function askq8(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].location.name === q8[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].location.name === q8[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1515,26 +1555,26 @@ function askq8(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].location.name === q8[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].location.name === q8[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].location.name === q8[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1587,28 +1627,32 @@ function askq9(i) {
   const ans3 = document.getElementById('ans-btn3');
   const ans4 = document.getElementById('ans-btn4');
 
+  console.log("9");
+  console.log(question[i]);
+  console.log(q9); 
+
   ans1.addEventListener('click', function (event) {
     if (question[i].name === q9[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q9[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1618,26 +1662,26 @@ function askq9(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].name === q9[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q9[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1647,26 +1691,26 @@ function askq9(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].name === q9[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q9[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1676,26 +1720,26 @@ function askq9(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].name === q9[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].name === q9[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].name === q9[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1733,10 +1777,14 @@ function askq10(i) {
   // foptions.push(q2[boptions[2]]);
   // foptions.push(q2[boptions[3]]);
 
-  document.getElementById('ans-btn1').innerText = q2[boptions[0]];
-  document.getElementById('ans-btn2').innerText = q2[boptions[1]];
-  document.getElementById('ans-btn3').innerText = q2[boptions[2]];
-  document.getElementById('ans-btn4').innerText = q2[boptions[3]];
+  document.getElementById('ans-btn1').innerText = ql[boptions[0]];
+  document.getElementById('ans-btn2').innerText = ql[boptions[1]];
+  document.getElementById('ans-btn3').innerText = ql[boptions[2]];
+  document.getElementById('ans-btn4').innerText = ql[boptions[3]];
+
+  console.log("10");
+  console.log(question[i]);
+  console.log(ql); 
 
   const hint = document.getElementById('hints');
   hint.innerHTML = 'Click here for hints';
@@ -1751,26 +1799,26 @@ function askq10(i) {
 
   ans1.addEventListener('click', function (event) {
     if (question[i].type === ql[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === ql[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1780,26 +1828,26 @@ function askq10(i) {
 
   ans2.addEventListener('click', function (event) {
     if (question[i].type === ql[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === ql[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1809,26 +1857,26 @@ function askq10(i) {
 
   ans3.addEventListener('click', function (event) {
     if (question[i].type === ql[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === ql[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
@@ -1838,26 +1886,26 @@ function askq10(i) {
 
   ans4.addEventListener('click', function (event) {
     if (question[i].type === ql[boptions[0]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
       ccount += 1;
     } else if (question[i].type === ql[boptions[1]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[2]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#84ff84';
       document.getElementById('ans-btn4').style.backgroundColor = '#fc4e4e';
     } else if (question[i].type === ql[boptions[3]]) {
-      console.log(question[i]);
+      // console.log(question[i]);
       document.getElementById('ans-btn2').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn1').style.backgroundColor = '#fc4e4e';
       document.getElementById('ans-btn3').style.backgroundColor = '#fc4e4e';

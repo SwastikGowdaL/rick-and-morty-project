@@ -1,10 +1,19 @@
-const source =
-  '../audio/Rick and Morty - Evil Morty Theme Song (Feewet Trap Remix) (mp3cut.net).mp3';
-const audio = new Audio();
-// no event listener needed here
-audio.src = source;
-audio.autoplay = true;
-audio.play();
+
+this.sound = new Audio();
+this.sound.setAttribute('crossorigin', 'anonymous'); 
+this.sound.src = '..assets/audio/theme-song.mp3';
+this.sound.load();
+this.sound.autoplay = true;
+this.sound.play()
+  .then(() => {
+    // Audio is playing.
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+
 setTimeout(() => {
   document.getElementById('levitate').style.animation =
     'do-levitation 1.2s alternate ease-in-out infinite';
