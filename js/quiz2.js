@@ -241,12 +241,21 @@ for(let j=0;j<3;j++){
     ques1(question_1,ques2);
   // ques2(question_2);
 
+  setTimeout(()=>{
+
+    sessionStorage.setItem('score', corans);
+    let num=1;
+    sessionStorage.setItem('timeup', num);
+    window.location.href = "indexlast.html";
+
+  },180000);
 
 }
 
 function ques1(q,callback){
   // return new Promise( function(resolve,reject){
   i++;
+  document.getElementById("body-id").style.visibility="visible";
 question_num.innerText=i;
 question.textContent = 'What is the gender of the below character?';
 question_img.setAttribute('src', q.image);
@@ -850,8 +859,9 @@ img3.remove();
 img4.remove();
 
 sessionStorage.setItem('score', corans);
-
-window.location.href = "indexlast.php";
+let num=0;
+sessionStorage.setItem('timeup', num);
+window.location.href = "indexlast.html";
 
 }, 5000);
 
@@ -2213,7 +2223,7 @@ this.sound.play()
 }
 function wrong_sound(){
   const source =
-  '..assets/audio/ws.mp3';
+  'ws.mp3';
 const audio = new Audio();
 // no event listener needed here
 audio.src = source;

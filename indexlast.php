@@ -87,7 +87,7 @@
 </tr>
 </thead>
 
-<tbody class="table-data" >
+<!-- <tbody class="table-data" >
   <tr>
     <td >1.</td>
     <td id="name1">swastik</td>
@@ -103,7 +103,7 @@
     <td id="name3">vignesh</td>
     <td id="score3">2</td>
   </tr>
-</tbody>
+</tbody> -->
 
 </table>
 </center>

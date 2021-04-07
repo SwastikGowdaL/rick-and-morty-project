@@ -109,13 +109,14 @@
     color: black;
     border: 3px solid black;
     transition: all 0.2s ease-in-out;
+    width: 300px;
 }
 
-.ans-op:hover{
+/* .ans-op:hover{
     background-color: black;
     color: white;
   
-}
+} */
 
 .index2-sub-space6{
     display: flex;
@@ -154,4 +155,16 @@
 }
 .index2-sub-space5 img{
     width: 200px;
+}
+
+#body-id{
+    visibility:hidden;
+}
+
+@media screen and (max-width: 347px) {
+
+.ans-op{
+    width: 200px;
+}
+
 }

@@ -1,7 +1,6 @@
 
 this.sound = new Audio();
-this.sound.setAttribute('crossorigin', 'anonymous'); 
-this.sound.src = '..assets/audio/theme-song.mp3';
+this.sound.src = 'theme-song.mp3';
 this.sound.load();
 this.sound.autoplay = true;
 this.sound.play()
