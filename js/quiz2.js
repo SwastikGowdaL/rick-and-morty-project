@@ -237,6 +237,7 @@ for(let j=0;j<3;j++){
   q10_op.push(options.type);
 }
 
+document.getElementById("quiz-loading").style.visibility="hidden";
 
     ques1(question_1,ques2);
   // ques2(question_2);
@@ -834,7 +835,7 @@ function next(){
 w3++;
   }
 
- 
+  document.getElementById("body-id").style.visibility="hidden";
 
 setTimeout(() => {
 
